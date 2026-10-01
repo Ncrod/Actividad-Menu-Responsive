@@ -37,7 +37,7 @@ ul{
     transition: color 0.3s, transform 0.3s;
 }
 
-/* Subrayado deslizante */
+
 .menu-links a::after{
     content: "";
     position: absolute;
