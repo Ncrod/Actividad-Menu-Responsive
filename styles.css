@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+}
+
+ul{
+    list-style: none;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0f0f0f;
+    border-bottom: 0.5px solid #2c2c2c;
+    padding: 10px 30px;
+}
+
+.menu-links{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu-links a{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #b1b1b1;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Subrayado deslizante */
+.menu-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s;
+}
+
+.menu-links a:hover,
+.menu-links li:focus-within a{
+    color: #ffffff;
+}
+
+
+.menu-links a:hover::after,
+.menu-links li:focus-within a::after{
+    width: 100%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    padding: 10px 20px;
+    color: #000000 !important;
+    background-color: #ffffff;
+    border-radius: 500px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn:hover,
+.menu-links li:focus-within .btn{
+    transform: scale(1.05) !important;
+}
+
+.btn::after{
+    display: none;
+}
+
+#menu-toggle,
+.hamburger{
+    display: none;
+}
+
+
+/*Esto es para tablet*/
+@media (max-width: 900px){
+
+    .menu{
+        flex-wrap: wrap;
+    }
+
+    .hamburger{
+        display: flex;
+        cursor: pointer;
+    }
+
+    .menu-links{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    #menu-toggle:checked ~ .menu-links{
+        display: flex;
+    }
+
+    .btn{
+        width: 100%;
+    }
+}
+
+/*Esto es para movil*/
+@media (max-width: 480px){ 
+
+    .hamburger img{
+        width: 40px;
+    }
+    .logo{
+        width: 170px;
+    }
+}
